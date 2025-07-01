@@ -1,3 +1,7 @@
-@for (item of movies(); track $index) {
-  <app-mooviecard [movie]="item" />
-}
+
+<div class="cards">
+
+  @for (item of movies(); track $index) {
+      <app-mooviecard [movie]="item" class="Card" />
+  }
+</div>
