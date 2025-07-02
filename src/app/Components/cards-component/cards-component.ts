@@ -3,11 +3,12 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { Http } from '../../service/http';
 import { Mooviecard } from "../mooviecard/mooviecard";
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-cards-component',
-  imports: [CardModule, ButtonModule, Mooviecard],
+  imports: [CardModule, ButtonModule, Mooviecard,RouterModule],
   templateUrl: './cards-component.html',
   styleUrl: './cards-component.scss'
 })
