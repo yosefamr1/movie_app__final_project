@@ -3,7 +3,7 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { Http } from '../../service/http';
 import { Mooviecard } from "../mooviecard/mooviecard";
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './cards-component.scss'
 })
 export class CardsComponent implements OnInit {
-  constructor(private http:Http){}
+  constructor(private http: Http, private router: Router) {}
 movies=signal<any[]>([]);
 
   getmovieslist(){
@@ -26,6 +26,10 @@ movies=signal<any[]>([]);
   
 ngOnInit(): void {
   this.getmovieslist();  
+}
+
+goToDetails(id: number) {
+  this.router.navigate(['/details', id]);
 }
 
 }
