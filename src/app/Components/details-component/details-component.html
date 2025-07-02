@@ -44,7 +44,17 @@
     </p-card>
 </div>
 
+<div class="recommended">
+    <h2>Recommendations</h2>
+    <div class="cards">
+        @for (item of recommended().results; track $index) {
+       <div class="card" (click)="goToDetails(item.id)">
+         <app-recommended-component [recommended]="item"/>
+       </div>
+     }
+    </div>
 
+</div>
 
 
 

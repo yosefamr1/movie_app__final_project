@@ -66,7 +66,7 @@
     .genre {
       background-color: #FFE353; 
       color: black;
-      padding: 4px 10px;
+      padding: 0.7rem;
       border-radius: 16px;
       font-size: 0.875rem;
     }
@@ -126,4 +126,24 @@
     border-radius: 2rem;
     padding: 10px;
     border: 1px solid #FFE353;
+}
+.recommended{
+    margin-top: 3rem;
+    h2{
+        font-size: 3rem;
+    }
+}
+.cards{
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+}
+.card{
+    width: 20%;
+}
+.footer{
+    display: flex;
 }

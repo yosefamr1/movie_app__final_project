@@ -6,6 +6,8 @@ import { Mooviecard } from "../mooviecard/mooviecard";
 import { RouterModule, Router } from '@angular/router';
 
 
+
+
 @Component({
   selector: 'app-cards-component',
   imports: [CardModule, ButtonModule, Mooviecard,RouterModule],
@@ -32,4 +34,5 @@ goToDetails(id: number) {
   this.router.navigate(['/details', id]);
 }
 
+ 
 }
