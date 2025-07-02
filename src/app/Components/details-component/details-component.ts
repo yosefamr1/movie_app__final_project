@@ -2,10 +2,14 @@ import { Component, OnInit, signal } from '@angular/core';
 import { Http } from '../../service/http';
 import { ActivatedRoute } from '@angular/router';
 import { CardModule } from 'primeng/card';
+import { RatingModule } from 'primeng/rating';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
+  
   selector: 'app-details-component',
-  imports: [CardModule],
+  imports: [CardModule,RatingModule,FormsModule,CommonModule],
   templateUrl: './details-component.html',
   styleUrl: './details-component.scss'
 })
@@ -25,5 +29,8 @@ movie = signal<any>({});
 
 
   }
+get roundedVoteAverage() {
+  return Math.round(this.movie()?.vote_average || 0);
+}
 
 }

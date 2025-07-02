@@ -1,41 +1,51 @@
-<!-- <section class="details">
-    <p>{{movie.original_title}}</p>
-
-    
-   
-</section> -->
-<!-- 
-<p-card class="details">
-    <div class="container">
-        <figure>
-            <img [src]="'https://image.tmdb.org/t/p/w500' + movie().poster_path" alt="">
-        </figure>
-        @if (movie()!==null) {}
-        <div class="text">
-            <h1 id="title"> {{movie().title}}</h1>
-
-
-
-        </div>
-    </div>
-</p-card> -->
-
 <div class="details">
 
     <p-card class="card">
         <div class="container">
 
-            <div class="movie_img">
-                <img [src]="'https://image.tmdb.org/t/p/w500' + movie().poster_path" alt="">
+            <div class="details-wrapper">
+                <div class="poster">
+                    <img [src]="'https://image.tmdb.org/t/p/w500' + movie().poster_path" alt="Poster" />
+                </div>
+                <div class="details-text">
+                    <h2>{{ movie().title }}</h2>
+                    <p><strong>Release Date:</strong> {{ movie().release_date }}</p>
+                    <div class="rating">
+                        <p-rating [readonly]="true" [ngModel]="roundedVoteAverage" stars="10"></p-rating>
+                        <span>{{ movie().vote_average }}/10</span>
+                    </div>
+                    <p class="overview">{{ movie().overview }}</p>
+                    <div class="genres">
+                        <span *ngFor="let genre of movie().genres" class="genre">
+                            {{ genre.name }}
+                        </span>
+                    </div>
+                    <div class="extra-info">
+                        <p><strong>Duration:</strong> {{ movie().runtime }} min</p>
+                        <p>
+                            <strong>Language:</strong>
+                            {{ movie().spoken_languages?.[0]?.english_name || 'N/A' }}
+                        </p>
+                    </div>
+                    <div class="production-logo">
+                        <img *ngIf="movie().production_companies?.[0]?.logo_path"
+                            [src]="'https://image.tmdb.org/t/p/w200' + movie().production_companies[0].logo_path"
+                            alt="Production Company" />
+                    </div>
+                    <div class="homepage" *ngIf="movie().homepage">
+                        <a class="website_btn" [href]="movie().homepage" target="_blank"> <i class="pi pi-link"></i>
+                            Website</a>
+                    </div>
+                </div>
             </div>
-            <div class="text">
-                <h2>{{movie().title}}</h2>
-               
-            </div>
+
         </div>
 
     </p-card>
 </div>
+
+
+
 
 
 <!-- {
