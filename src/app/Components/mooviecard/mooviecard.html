@@ -1,24 +1,25 @@
 <div *ngIf="movie() as movie ">
     <!-- {{ movie.title }} -->
-    <div class="mb-4 p-8 flex items-center justify-center">
-        <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+    <div class="card">
+        <p-card >
             <ng-template #header>
                 <img alt="Card" class="w-full" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />
             </ng-template>
             <ng-template #title>
-                <h2>{{movie.title}}</h2>
+                <h4 class="title">{{movie.title}}</h4>
             </ng-template>
+            <div class="footer"></div>
             <ng-template #subtitle> {{movie.release_date}} </ng-template>
+            <p-button  icon="pi pi-heart" [style]="{ background: 'transparent', border: 'none', color: 'red' }">
+                    </p-button>
             <!-- <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
             quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
         </p> -->
             <ng-template #footer>
                 <div class="flex gap-4 mt-1">
-                    <p-button  icon="pi pi-heart" [style]="{ background: 'transparent', border: 'none', color: 'red' }">
-                    </p-button>
+                    
 
-                    <!-- <p-button label="Save" class="w-full" styleClass="w-full" /> -->
                 </div>
             </ng-template>
         </p-card>
