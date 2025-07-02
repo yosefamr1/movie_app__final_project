@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { provideRouter, RouterOutlet } from '@angular/router';
 import { Nav } from "./Components/nav/nav";
 import { CardsComponent } from "./Components/cards-component/cards-component";
+import { WhatchlistComponent } from "./Components/whatchlist-component/whatchlist-component";
+import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Nav, CardsComponent],
+  imports: [RouterOutlet, Nav, CardsComponent, WhatchlistComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

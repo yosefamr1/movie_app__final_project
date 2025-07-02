@@ -1,11 +1,11 @@
-.nav{
-  position: fixed;       
-  top: 0;                
-  left: 0;               
-  width: 100%;          
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); 
-  z-index: 1000;   
+
+app-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-.cards{
-    margin-top: 5rem;
-}
+
+

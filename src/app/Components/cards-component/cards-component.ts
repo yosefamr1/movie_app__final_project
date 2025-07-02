@@ -4,17 +4,17 @@ import { ButtonModule } from 'primeng/button';
 import { Http } from '../../service/http';
 import { Mooviecard } from "../mooviecard/mooviecard";
 import { RouterModule, Router } from '@angular/router';
-
-
+import { PaginatorModule } from 'primeng/paginator';
 
 
 @Component({
   selector: 'app-cards-component',
-  imports: [CardModule, ButtonModule, Mooviecard,RouterModule],
+  imports: [CardModule, ButtonModule, Mooviecard,RouterModule,PaginatorModule],
   templateUrl: './cards-component.html',
   styleUrl: './cards-component.scss'
 })
 export class CardsComponent implements OnInit {
+
   constructor(private http: Http, private router: Router) {}
 movies=signal<any[]>([]);
 
@@ -34,5 +34,14 @@ goToDetails(id: number) {
   this.router.navigate(['/details', id]);
 }
 
+//////Paginator///////////////
+first: number = 0;
+
+    rows: number = 10;
+
+    onPageChange(event:any) {
+        this.first = event.first ?? 0;
+        this.rows = event.rows ?? 10;
+    }
  
 }
