@@ -1,28 +1,22 @@
-<div *ngIf="movie as movie ">
-    <!-- {{ movie.title }} -->
-    <div class="card">
-        <p-card>
-            <ng-template #header>
-                <img alt="Card" class="w-full" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />
-            </ng-template>
-            <ng-template #title>
-                <h4 class="title">{{movie.title}}</h4>
-            </ng-template>
-            <div class="footer"></div>
-            <ng-template #subtitle> {{movie.release_date}} </ng-template>
 
-            <button pButton type="button" (click)="toggleWish($event, movie)" class="wishlist-btn"
-                [style]="{ background: 'transparent', border: 'none', padding: '0' }">
-                <i [ngClass]="isInWish(movie.id) ? 'pi pi-heart-fill' : 'pi pi-heart'"
-                    style="color: red; font-size: 1.2rem;"></i>
-            </button>
 
-            <!-- 
-            <p-button 
-            
-            icon="pi pi-heart" [style]="{ background: 'transparent', border: 'none', color: 'red' }">
-            </p-button> -->
+          <div class="card">
+              <p-card>
+                <div class="poster">
 
-        </p-card>
-    </div>
-</div>
+                  <img alt="Card" class="w-full" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />
+                </div>
+                  <ng-template #title>
+                      <h4 class="title">{{movie.title}}</h4>
+                  </ng-template>
+                  <div class="footer"></div>
+                  <ng-template #subtitle> {{movie.release_date}} </ng-template>
+      
+                  <button pButton type="button" (click)="toggleWish($event, movie)" class="wishlist-btn"
+                      [style]="{ background: 'transparent', border: 'none', padding: '0' }">
+                      <i [ngClass]="isInWish(movie.id) ? 'pi pi-heart-fill' : 'pi pi-heart'"
+                          style="color: #FFE353; font-size: 1.2rem;"></i>
+                  </button>
+              </p-card>
+          </div>
+ 

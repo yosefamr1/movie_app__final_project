@@ -2,10 +2,11 @@ import { Component, inject, Input, input } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { watchlistStore } from '../../stores/watch.store';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-watchcard-component',
-  imports: [CardModule,CommonModule],
+  imports: [CardModule,CommonModule,RouterModule],
   templateUrl: './watchcard-component.html',
   styleUrl: './watchcard-component.scss'
 })
