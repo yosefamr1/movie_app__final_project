@@ -24,6 +24,13 @@ export class Http {
   getrecommended(id: any) {
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}/recommendations?`, { headers: this.headers });
   }
+  gettvlist(page: number = 1) {
+    return this.http.get(` https://api.themoviedb.org/3/tv/popular?`, { headers: this.headers });
+  }
+  gettvbyid(id: any) {
+    return this.http.get(`https://api.themoviedb.org/3/tv/${id}`, { headers: this.headers });
+
+  }
 
 
 }

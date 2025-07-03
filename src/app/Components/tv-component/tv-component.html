@@ -1,0 +1,14 @@
+<div class="cards">
+    
+  @for (item of tvshows(); track $index) {
+    <div class="card" (click)="goToDetails(item.id)">
+      <app-tvcard-component [movie]="item" class=/>
+    </div>
+  }
+<!-- <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]" /> -->
+
+<!-- 
+  <div class="card flex justify-center">
+    <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]" />
+</div> -->
+</div>

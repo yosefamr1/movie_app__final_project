@@ -18,5 +18,13 @@ export const routes: Routes = [
         path:'details/:id',
         loadComponent:()=> import('./Components/details-component/details-component').then((m)=>m.DetailsComponent)
     }
-   
+   ,
+    {
+        path:'tv',
+        loadComponent:()=> import('./Components/tv-component/tv-component').then((m)=>m.TvComponent)
+    },
+    {
+        path:'tvdetails/:id',
+        loadComponent:()=> import('./Components/tv-details/tv-details').then((m)=>m.TvDetails)
+    }
 ];

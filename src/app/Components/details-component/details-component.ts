@@ -1,5 +1,4 @@
 import { Component, OnInit, signal,Input } from '@angular/core';
-
 import { Http } from '../../service/http';
 import { ActivatedRoute } from '@angular/router';
 import { CardModule } from 'primeng/card';
@@ -12,7 +11,7 @@ import { RecommendedComponent } from "../recommended-component/recommended-compo
 @Component({
 
   selector: 'app-details-component',
-  imports: [CardModule, RatingModule, FormsModule, CommonModule, RouterModule, RecommendedComponent],
+  imports: [CardModule, RatingModule, FormsModule, CommonModule, RouterModule, RecommendedComponent,],
   templateUrl: './details-component.html',
   styleUrl: './details-component.scss'
 })
@@ -24,26 +23,25 @@ export class DetailsComponent implements OnInit {
 
 
 
-
-  ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+ngOnInit(): void {
+  this.route.params.subscribe(params => {
+    const id = params['id'];
     if (id !== null) {
-      //details
+      // details
       this.http.getmoviebyid(id).subscribe((res: any) => {
         this.movie.set(res);
         console.log(this.movie());
-        })
-        //recommended 
-        this.http.getrecommended(id).subscribe((res: any) => {
-          this.recommended.set(res);
-                  console.log("recommended :"+ this.recommended());
+      });
 
-        })
-      
-
-      
+      // recommended
+      this.http.getrecommended(id).subscribe((res: any) => {
+        this.recommended.set(res);
+        console.log("recommended:", this.recommended());
+      });
     }
-  }
+  });
+}
+
 
 goToDetails(id: number) {
   this.router.navigate(['/details', id]);
