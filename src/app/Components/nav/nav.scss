@@ -1,12 +1,18 @@
-.nav{
-    padding: 1rem;
-    background-color: #FFE353;
- .container{
+.nav {
+  padding: 1rem;
+  background-color: #ffe353;
+  .container {
     display: flex;
     justify-content: space-between;
+  }
 }
+.logo {
+  display: flex;
+  margin-right: 1rem;
 }
-.logo{
-    display: flex;
-    margin-right: 1rem;
+.buttons {
+  display: flex;
+}
+.counter{
+  margin-left: -10px;    
 }
