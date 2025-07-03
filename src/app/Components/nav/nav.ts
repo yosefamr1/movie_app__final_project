@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { watchlistStore } from '../../store/watch.store';
+import { watchlistStore } from '../../stores/watch.store';
 
 @Component({
   selector: 'app-nav',

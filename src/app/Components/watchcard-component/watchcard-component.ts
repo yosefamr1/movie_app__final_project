@@ -1,6 +1,6 @@
 import { Component, inject, Input, input } from '@angular/core';
 import { CardModule } from 'primeng/card';
-import { watchlistStore } from '../../store/watch.store';
+import { watchlistStore } from '../../stores/watch.store';
 import { CommonModule } from '@angular/common';
 
 @Component({

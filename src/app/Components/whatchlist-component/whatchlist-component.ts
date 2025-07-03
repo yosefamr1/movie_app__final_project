@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CardModule } from 'primeng/card';
-import { watchlistStore } from '../../store/watch.store';
+import { watchlistStore } from '../../stores/watch.store';
 import { Router } from '@angular/router';
 import { WatchcardComponent } from '../watchcard-component/watchcard-component';
 import { CommonModule } from '@angular/common';
