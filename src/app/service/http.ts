@@ -14,8 +14,8 @@ export class Http {
 
   constructor(private http: HttpClient) { }
 
-  getmovielist(page: number = 1) {
-    return this.http.get(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&${page}`, { headers: this.headers });
+  getmovielist(page: number ) {
+    return this.http.get(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=${page}`, { headers: this.headers });
   }
   getmoviebyid(id: any) {
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}`, { headers: this.headers });
