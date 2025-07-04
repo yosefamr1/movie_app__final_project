@@ -141,3 +141,14 @@
   justify-content: center;
   margin-top: 2rem;
 }
+.card .wishlist-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+
+    i {
+      font-size: 1.2rem;
+      color: #ffe353;
+    }
+  }

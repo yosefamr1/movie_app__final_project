@@ -36,6 +36,10 @@
                         <a class="website_btn" [href]="movie().homepage" target="_blank"> <i class="pi pi-link"></i>
                             Website</a>
                     </div>
+                    <button pButton type="button" (click)="toggleWish( movie)" class="wishlist-btn"
+                        [style]="{ background: 'transparent', border: 'none' }">
+                        <i [ngClass]="isInWish(movie().id) ? 'pi pi-heart-fill' : 'pi pi-heart'"></i>
+                    </button>
                 </div>
             </div>
 
@@ -48,10 +52,10 @@
     <h2>Recommendations</h2>
     <div class="cards">
         @for (item of recommended().results; track $index) {
-       <div class="card" (click)="goToDetails(item.id)">
-         <app-recommended-component [recommended]="item"/>
-       </div>
-     }
+        <div class="card" (click)="goToDetails(item.id)">
+            <app-recommended-component [recommended]="item" />
+        </div>
+        }
     </div>
 
 </div>

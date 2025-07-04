@@ -1,4 +1,4 @@
-import { Component, OnInit, signal,Input } from '@angular/core';
+import { Component, OnInit, signal,Input, inject } from '@angular/core';
 import { Http } from '../../service/http';
 import { ActivatedRoute } from '@angular/router';
 import { CardModule } from 'primeng/card';
@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 import { RecommendedComponent } from "../recommended-component/recommended-component";
+import { watchlistStore } from '../../stores/watch.store';
 
 @Component({
 
@@ -51,5 +52,17 @@ goToDetails(id: number) {
   }
 
 
+
+  watch = inject(watchlistStore);
+
+
+ toggleWish( movie: any) {
+    this.watch.togglemoviedetails(this.movie());
+    
+  }
+
+  isInWish(productId: number): boolean {
+    return this.watch.isInwish(this.movie().id);
+  }
 
 }

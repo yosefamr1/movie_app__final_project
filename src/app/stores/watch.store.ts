@@ -42,8 +42,23 @@ export const watchlistStore = signalStore(
       this.addtowish(movie);
       
     }
-  }
-})),
+  },
+    togglemoviedetails( movie: any) {
+    if (this.isInwish(movie.id)) {
+      this.removefromwish(movie.id);
+    } else {
+      this.addtowish(movie);
+      
+    }
+  },
+
+  
+})
+
+
+),
+
+
 
   //param 5
 
