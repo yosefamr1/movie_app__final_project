@@ -1,20 +1,35 @@
 <div class="search">
   <h2>Welcome to our movie app</h2>
   <p>Millions of movies, TV shows and people to discover. Explore now.</p>
-<!-- 
-  <input type="text" [(ngModel)]="query" placeholder="Search..." />
-  <button (click)="onSearch()">Search</button> -->
+
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="query"
+      placeholder="Search for a movie..."
+    />
+    <button (click)="onSearch()">Search</button>
+  </div>
 </div>
 
 <div class="cards">
-  @for (item of movies(); track $index) {
-  <div class="card" (click)="goToDetails(item.id)">
-    <app-mooviecard [movie]="item" class= />
-  </div>
+  @if (movies().length > 0) {
+    @for (item of movies(); track $index) {
+      <div class="card" (click)="goToDetails(item.id)">
+        <app-mooviecard [movie]="item" />
+      </div>
+    }
+  } @else {
+    <p class="no-results">No results found.</p>
   }
-  <div class="paginator">
-    <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
-      [rowsPerPageOptions]="[10, 20, 30]" />
-  </div>
 
+  <div class="paginator">
+    <p-paginator
+      (onPageChange)="onPageChange($event)"
+      [first]="first"
+      [rows]="rows"
+      [totalRecords]="120"
+      [rowsPerPageOptions]="[10, 20, 30]"
+    />
+  </div>
 </div>

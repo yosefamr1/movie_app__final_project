@@ -40,9 +40,12 @@ export class Http {
       headers: this.headers,
     });
   }
-  search(query: string) {
-  return this.http.get(`https://api.themoviedb.org/3/search/movie?query=${query}`, { headers: this.headers });
+ search(query: string) {
+  return this.http.get(`https://api.themoviedb.org/3/search/movie?query=${query}`, {
+    headers: this.headers
+  });
 }
+
 
   
 }
