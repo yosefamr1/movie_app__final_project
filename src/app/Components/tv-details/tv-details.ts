@@ -5,10 +5,11 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CardModule } from 'primeng/card';
 import { RatingModule } from 'primeng/rating';
 import { Http } from '../../service/http';
+import { RecommendedComponent } from '../recommended-component/recommended-component';
 
 @Component({
   selector: 'app-tv-details',
-  imports: [CardModule,RatingModule,FormsModule,CommonModule,RouterModule],
+  imports: [CardModule,RatingModule,FormsModule,CommonModule,RouterModule,RecommendedComponent],
   templateUrl: './tv-details.html',
   styleUrl: './tv-details.scss'
 })
@@ -27,21 +28,23 @@ export class TvDetails {
         console.log(this.movie());
         })
         //recommended 
-        this.http.getrecommended(id).subscribe((res: any) => {
+        this.http.getrecommendedtv(id).subscribe((res: any) => {
           this.recommended.set(res);
                   console.log("recommended :"+ this.recommended());
 
         })
       
-
-      
+    
     }
+
+
+    
   }
 
 
-// goToDetails(id: number) {
-//   this.router.navigate(['/details', id]);
-// }
+goToDetails(id: number) {
+  this.router.navigate(['/details', id]);
+}
   get roundedVoteAverage() {
     return Math.round(this.movie()?.vote_average || 0);
   }

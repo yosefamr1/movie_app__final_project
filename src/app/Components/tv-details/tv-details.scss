@@ -1,12 +1,20 @@
-.details{
-    margin-top: 5rem;
-}
-.details-wrapper {
+.details {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 4rem;
+  justify-content: center;
   padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.details-card {
+  width: 100%;
+  max-width: 1000px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -14,136 +22,122 @@
   }
 }
 
-.poster {
-  flex: 1 1 300px;
-  max-width: 300px;
+.poster img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
-  img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.details-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 }
 
 .details-text {
-  flex: 2 1 500px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.genre {
+  background-color: #eeeeee;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}
+
+.extra-info p {
+  margin: 0.2rem 0;
+}
+
+.production-logo img {
+  margin-top: 1rem;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.website_btn {
+  border: 2px solid #ffe353;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.website_btn:hover {
+  background-color: #f0d655;
+}
+
+.recommended {
+  margin-top: 3rem;
 
   h2 {
     font-size: 2rem;
-    color: #111;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 1rem;
-    color: #444;
-  }
-
-  .overview {
-    line-height: 1.6;
-  }
-
-  .rating {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    span {
-      font-weight: bold;
-      font-size: 1rem;
-      color: #444;
-    }
-  }
-
-  .genres {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-
-    .genre {
-      background-color: #FFE353; 
-      color: black;
-      padding: 0.7rem;
-      border-radius: 16px;
-      font-size: 0.875rem;
-    }
-  }
-
-  .extra-info {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-
-    p {
-      margin: 0;
-    }
-  }
-
-  .production-logo img {
-    margin-top: 1rem;
-    max-height: 50px;
-    object-fit: contain;
-  }
-
-  .homepage a {
-    margin-top: 1rem;
-    display: inline-block;
-    color: #2563eb;
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration: none;
-    }
+    margin-bottom: 1rem;
+    text-align: center;
   }
 }
 
-/* ⭐ تنسيق p-rating (PrimeNG) */
-::ng-deep .p-rating .p-rating-icon {
-  color: #facc15; /* أصفر ذهبي */
-  font-size: 1.8rem;
-  margin-right: 4px;
-  transition: transform 0.2s ease;
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
 }
 
-::ng-deep .p-rating .p-rating-icon:hover {
-  transform: scale(1.2);
+.card {
+  width: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: none;
 }
 
-::ng-deep .p-rating .p-rating-icon.pi-star-fill {
-  color: #facc15;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-::ng-deep .p-rating .p-rating-icon.pi-star {
-  color: #d1d5db;
+.card img {
+  width: 100%;
+  display: block;
+  border-bottom: none;
 }
 
-.website_btn{
-    text-decoration: none !important;
-    color: black !important;
-    border-radius: 2rem;
-    padding: 10px;
-    border: 1px solid #FFE353;
+.card h3,
+.card p {
+  margin: 0.5rem;
+  text-align: center;
 }
-.recommended{
-    margin-top: 3rem;
-    h2{
-        font-size: 3rem;
-    }
-}
-.cards{
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
 
-}
-.card{
-    width: 20%;
-}
-.footer{
-    display: flex;
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
