@@ -78,20 +78,19 @@
 }
 
 .website_btn {
+  border: 2px solid #ffe353;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   margin-top: 1rem;
-  background-color: #1976d2;
-  color: white;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 2rem;
   text-decoration: none;
   transition: background-color 0.3s;
 }
 
 .website_btn:hover {
-  background-color: #0d47a1;
+  background-color: #f0d655;
 }
 
 .recommended {
