@@ -1,4 +1,3 @@
-// src/app/Components/cards-component/cards-component.ts
 
 import { Component, OnInit, signal } from '@angular/core';
 import { CardModule } from 'primeng/card';

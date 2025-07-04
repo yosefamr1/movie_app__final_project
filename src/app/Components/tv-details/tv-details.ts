@@ -9,13 +9,13 @@ import { RecommendedComponent } from '../recommended-component/recommended-compo
 
 @Component({
   selector: 'app-tv-details',
-  imports: [CardModule,RatingModule,FormsModule,CommonModule,RouterModule,RecommendedComponent],
+  imports: [CardModule, RatingModule, FormsModule, CommonModule, RouterModule, RecommendedComponent],
   templateUrl: './tv-details.html',
   styleUrl: './tv-details.scss'
 })
 export class TvDetails {
   movie = signal<any>({});
- @Input() recommended = signal<any>({});
+  @Input() recommended = signal<any>({});
   constructor(private http: Http, private route: ActivatedRoute, private router: Router) { }
 
 
@@ -26,25 +26,25 @@ export class TvDetails {
       this.http.gettvbyid(id).subscribe((res: any) => {
         this.movie.set(res);
         console.log(this.movie());
-        })
-        //recommended 
-        this.http.getrecommendedtv(id).subscribe((res: any) => {
-          this.recommended.set(res);
-                  console.log("recommended :"+ this.recommended());
+      })
+      //recommended 
+      this.http.getrecommendedtv(id).subscribe((res: any) => {
+        this.recommended.set(res);
+        console.log("recommended :" + this.recommended());
 
-        })
-      
-    
+      })
+
+
     }
 
 
-    
+
   }
 
 
-goToDetails(id: number) {
-  this.router.navigate(['/details', id]);
-}
+  goToDetails(id: number) {
+    this.router.navigate(['/details', id]);
+  }
   get roundedVoteAverage() {
     return Math.round(this.movie()?.vote_average || 0);
   }

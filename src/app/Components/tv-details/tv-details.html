@@ -8,8 +8,8 @@
                     <img [src]="'https://image.tmdb.org/t/p/w500' + movie().poster_path" alt="Poster" />
                 </div>
                 <div class="details-text">
-                    <h2>{{ movie().title }}</h2>
-                    <p><strong>Release Date:</strong> {{ movie().release_date }}</p>
+                    <h2>{{ movie().name }}</h2>
+                    <p><strong>Release Date:</strong> {{ movie().first_air_date }}</p>
                     <div class="rating">
                         <p-rating [readonly]="true" [ngModel]="roundedVoteAverage" stars="10"></p-rating>
                         <span>{{ movie().vote_average }}/10</span>
@@ -21,7 +21,7 @@
                         </span>
                     </div>
                     <div class="extra-info">
-                        <p><strong>Duration:</strong> {{ movie().runtime }} min</p>
+                        <p><strong>Duration:</strong> {{ movie().episode_run_time }} min</p>
                         <p>
                             <strong>Language:</strong>
                             {{ movie().spoken_languages?.[0]?.english_name || 'N/A' }}
